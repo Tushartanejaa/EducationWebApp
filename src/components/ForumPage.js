@@ -63,12 +63,12 @@ function ForumPage() {
   };
 
   return (
-    <div style={{backgroundColor: 'beige', width: '50%', height: '80%', textAlign: 'center', margin: '10px 340px 20px'}}>
+    <div style={{backgroundColor: '#9cf8f8', width: '50%', height: '80%', textAlign: 'center', margin: '10px 340px 20px'}}>
       <h1>Discussion Forum</h1>
 
       <div className="discussion-search">
         <label>Search:</label>
-        <input type="text" value={searchTerm} onChange={handleSearchTermChange} />
+        <input style={{width :'250px',marginLeft:'35%'}} type="text" value={searchTerm} onChange={handleSearchTermChange} />
       </div>
 
       <div className="discussion-list">
@@ -106,7 +106,7 @@ function ForumPage() {
                 <p>No comments yet.</p>
               )}
 
-              <form onSubmit={handleCommentSubmit}>
+              <form style={{marginLeft : '190px'}} onSubmit={handleCommentSubmit}>
                 <input
                   type="text"
                   placeholder="Add a comment"
@@ -125,7 +125,7 @@ function ForumPage() {
       {showAddDiscussion ? (
         <div className="add-discussion-form">
           <h2>Add Discussion</h2>
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form style={{marginLeft : '190px'}} onSubmit={(e) => e.preventDefault()}>
             <input type="text" placeholder="Title" />
             <input type="text" placeholder="Author" />
             <textarea placeholder="Content"></textarea>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/login.css";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Home from './Home';
 
 function Login() {
@@ -41,21 +41,23 @@ function Login() {
 
       <form action="POST" class="back">
         <input
-          type="email"
+          
           onChange={(e) => {
             setEmail(e.target.value);
           }}
           placeholder="Email"
+          style={{width: '100%', height: '30px', marginBottom: '10px'}}
         />
         <input
-          type="password"
+          
           onChange={(e) => {
             setPassword(e.target.value);
           }}
           placeholder="Password"
+          style={{width: '100%', height: '30px', marginBottom: '10px'}}
         />
-        <input type="submit" onClick={submit} />
-        <button><Link to="/signup">Signup Page</Link></button>
+        <button type="submit" onClick={submit}>Submit</button>
+        <button onClick={() => history("/signup")}>Signup</button>
         
       </form>
       <br />
