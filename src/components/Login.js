@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/login.css";
 import { useNavigate, Link } from "react-router-dom";
+import Home from './Home';
 
 function Login() {
   const history = useNavigate();

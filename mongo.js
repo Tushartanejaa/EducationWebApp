@@ -9,7 +9,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/RegistrationsData")  //mongodb://127
 
 
 const newSchema=new mongoose.Schema({
-    email:{
+    emailid:{
         type:String,
         required:true
     },

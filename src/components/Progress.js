@@ -1,47 +1,61 @@
 import React from "react";
 
 const Progress = () => {
+  const [submitMessage, setSubmitMessage] = React.useState();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSubmitMessage("Your progress chart will be available in 24 hours");
+  };
   return (
-    <div style={{ backgroundColor: "burlywood" }}>
-      <form>
-        <label>NAME</label>
-        <input type="text" placeholder="Enter your Name" />
-        <br></br>
-        <label>ENTER mail id</label>
-        <input type="email" />
-        <br></br>
-        <label> Enter Password</label>
-        <input type="password" />
-        <br></br>
-        <label>Enter the name of your course</label>
-        <br />
-        <br />
-        <input type="radio" value="je" name="section" id="JEE" />
-        <label for="sectionida">JEE</label>
-        <input type="radio" value="COD" name="section" id="cod" />
-        <label for="sectionidb">Coding</label>
-        <input type="radio" value="DA" name="section" id="DA" />
-        <label for="sectionidc">Data Analytics</label>
-        <input type="radio" value="ds" name="section" id="DS" />
-        <label for="sectionida">Data Scientist</label>
-        <input type="radio" value="upsc" name="section" id="UPsc" />
-        <label for="sectionidb">Upsc</label>
-        <input type="radio" value="crypto" name="section" id="crypt" />
-        <label for="sectionidc">CryptoCurrency</label>
-        <br></br>
-        <h4>Enter the course id</h4>
-        <label>ID </label>{" "}
-        <input type="text" placeholder="Enter your course id here" />
-        <button>Submit</button>
-        <h3>
-          <p>
-            Your full progress chart will be available in 24 hrs once you fill
-            the form
-          </p>
-        </h3>
+    <div
+      style={{
+        width: "50%",
+        height: "100%",
+        marginLeft: "300px",
+        marginTop: "100px",
+      }}
+    >
+      <form
+        style={{
+          backgroundColor: "beige",
+          margin: "5px 0 50px 0",
+          padding: "30px",
+        }}
+      >
+        <div style={{ padding: "20px" }}>
+          <label>Name:</label>
+          <input type="text" placeholder="Name" required></input>
+          <label>Email:</label>
+          <input type="text" placeholder="Email" required></input>
+          <label>Cours ID:</label>
+          <input type="text" placeholder="ID" required></input>
+          <label>Courses:</label>
+          <select style={{ padding: "5px" }}>
+            <option value="Coding">Coding</option>
+            <option value="DataScience">Data Science</option>
+            <option value="Devops">DevOps</option>
+            <option value="UPSC">UPSC</option>
+          </select>
+        </div>
+        <button
+          style={{
+            width: '30%',
+            padding: "10px 20px",
+            backgroundColor: "#49c54d",
+            color: "white",
+            border: "none",
+            borderRadius: "10px",
+            cursor: "pointer",
+            marginLeft: "250px",
+          }}
+          onClick={handleSubmit}
+        >
+          Submit
+        </button>
+        {submitMessage ? <div>{submitMessage}</div> : null}
       </form>
     </div>
   );
 };
-
 export default Progress;

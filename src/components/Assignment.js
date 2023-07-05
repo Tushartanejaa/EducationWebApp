@@ -3,7 +3,7 @@ import "../styles/assignment.css";
 
 const Assignment = () => {
   return (
-    <div class="form">
+    <div className="container form">
       <form>
         <label for="name">Your Name:</label>
         <input type="text" id="name" name="name" required />
